@@ -415,7 +415,7 @@ body {
 .service-title-area .module-tag { margin-bottom: 0; color: var(--accent); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 3px; font-weight: 600; }
 .service-title-area h2 { font-size: var(--fs-h2); line-height: 1.05; font-family: var(--font-head); color: var(--text-main); font-weight: 300; margin-bottom: 2vh; letter-spacing: -1px; }
 
-/* FIX: Letras Blancas puras para "WEB A MEDIDA" y prevenir bugs en celular */
+/* Letras Blancas puras para "WEB A MEDIDA" y prevenir bugs en celular */
 .service-title-area .highlight { font-weight: 700; color: #FFFFFF; }
 
 .service-lead { color: var(--text-gray); font-size: var(--fs-p); line-height: 1.7; max-width: 650px; font-weight: 300; margin: 0; }
@@ -496,7 +496,7 @@ body {
 
 .contact-title-ultra { font-family: var(--font-head); font-size: var(--fs-h2); line-height: 1.05; font-weight: 300; color: var(--text-main); margin: 0; }
 
-/* FIX: Texto sólido para "HOY" en la sección de contacto */
+/* Texto sólido para "HOY" en la sección de contacto */
 .text-gradient-glow { color: var(--accent); font-weight: 800; text-shadow: 0 0 35px rgba(255, 144, 0, 0.3); }
 
 .contact-desc-modern { color: var(--text-gray); font-size: var(--fs-p); font-weight: 300; line-height: 1.7; max-width: 95%; margin: 0; }
@@ -686,9 +686,13 @@ body {
 }
 
 @media (max-width: 900px) {
-    .navbar { padding: 10px 4%; min-height: 65px; flex-wrap: nowrap; gap: 8px; } .logo { gap: 5px; flex: 1; min-width: 0; }
+    .navbar { padding: 10px 4%; min-height: 65px; flex-wrap: nowrap; gap: 8px; } 
+    /* AJUSTE PARA EVITAR SUPERPOSICIÓN DEL LOGO */
+    .logo { gap: 5px; flex: 1; min-width: 0; max-width: 55vw; align-items: center; } 
+    .brand-logo { max-width: 100%; height: auto !important; max-height: 32px !important; object-fit: contain; }
+    .logo-text-wrapper span { font-size: 0.5rem !important; letter-spacing: 1.5px !important; margin-top: 0 !important; }
+    
     .logo-code-icon { width: 22px; height: 22px; } .logo-code-text { font-size: 1.3rem; letter-spacing: -0.5px; line-height: 1; }
-    .logo-subtitle { font-size: 0.5rem; letter-spacing: 3px; margin-top: 1px; }
     .controls-wrapper { margin-left: auto; margin-right: 0; gap: 12px; padding-left: 10px; border-left: none; flex-shrink: 0; }
     .lang-switch { gap: 5px; } .lang-btn { font-size: 1.1rem; padding: 2px; } 
     .hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; z-index: 2000; margin-left: 5px; width: 28px; height: 24px; flex-shrink: 0; }
@@ -721,6 +725,15 @@ body {
     
     .hero-ui-layer { bottom: 30px !important; left: 6%; right: 6%; gap: 15px !important; } .nav-btn-premium { width: 40px !important; height: 40px !important; } .social-sidebar { display: none !important; }
     .about-premium-board, .service-premium-board, .detail-scroll-area { height: auto !important; overflow-y: visible !important; flex: none !important; min-height: max-content; margin: 2vh 4%; padding: 4vh 5vw; border-radius: 12px; padding-bottom: 40px !important; }
+    
+    /* FIX: ANCHO TOTAL Y CENTRADO EN "SOBRE NOSOTROS" PARA MOBILE */
+    .about-hero-grid { grid-template-columns: 1fr; gap: 20px; }
+    .about-hero-titles { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .separator-line { margin: 2vh auto !important; }
+    .about-hero-quote { border-left: none; border-top: 1px solid var(--border-gold); padding-left: 0; padding-top: 25px; text-align: center; }
+    .about-content-split { grid-template-columns: 1fr; }
+    .founder-premium-card { grid-template-columns: 1fr; }
+    .founder-photo-wrapper { min-height: 250px; }
     
     .hub-grid-large { grid-template-columns: 1fr !important; }
 
@@ -781,7 +794,6 @@ body {
 .module-header { margin-bottom: 5vh; position: relative; }
 .module-header h2 { font-family: var(--font-head); font-size: var(--fs-h2); font-weight: 300; line-height: 1.1; margin-bottom: 2vh; color: var(--text-main); letter-spacing: -1px; }
 
-/* FIX: Colores sólidos para los títulos */
 .module-header .highlight { font-weight: 700; color: var(--accent); }
 
 .module-header .separator { width: 80px; height: 3px; background: var(--accent); margin-bottom: 2.5vh; border-radius: 2px; box-shadow: 0 0 15px rgba(255,144,0,0.4); }
